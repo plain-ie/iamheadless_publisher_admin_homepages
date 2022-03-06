@@ -1,6 +1,6 @@
 # iamheadless_publisher_admin_homepages
 
-App to render redirects item type in `iamheadless_publisher_admin` frontend.
+App to render homepage item type in `iamheadless_publisher_admin` frontend.
 
 ## Installation
 
