@@ -1,0 +1,9 @@
+{% load i18n %}
+
+{% translate 'translatable content' as TEXT_TRANSLATABLE_CONTENT %}
+
+<div class="form-group">
+    <h2>{{ TEXT_TRANSLATABLE_CONTENT|capfirst }}</h2>
+</div>
+{% include 'iamheadless_publisher_admin/components/forms/tabbed_content_formset.html' with FORMSET=content_formset %}
+<div class="margin-top-lg"></div>
