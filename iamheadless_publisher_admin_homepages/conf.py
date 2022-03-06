@@ -1,9 +1,11 @@
-from .apps import IamheadlessPublisherHomepagesTopicConfig
+from django.conf import settings as dj_settings
+
+from .apps import IamheadlessPublisherHomepagesTopicConfig as AppConfig
 
 
 class Settings:
 
-    APP_NAME = IamheadlessPublisherHomepagesTopicConfig.name
+    APP_NAME = AppConfig.name
     ITEM_TYPE = 'homepage'
 
     def __getattr__(self, name):
