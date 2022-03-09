@@ -1,6 +1,6 @@
 from django.conf import settings as dj_settings
 
-from .apps import IamheadlessPublisherHomepagesTopicConfig as AppConfig
+from .apps import IamheadlessPublisherAdminHomepagesConfig as AppConfig
 
 
 class Settings:
