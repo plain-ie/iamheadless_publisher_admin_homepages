@@ -2,6 +2,7 @@ import datetime
 from typing import List, Optional
 
 from django.core.exceptions import ValidationError
+from django.shortcuts import reverse
 from django.template.loader import render_to_string
 from django.utils.translation import gettext as _
 
@@ -45,6 +46,22 @@ class HomepagePydanticModel(BaseItemPydanticModel):
         _contents = _data.get('data', {}).get('contents', [])
         _display_content = HomepagePydanticModel.get_display_content(_contents, self._primary_language)
         return _display_content['title']
+
+    @property
+    def EDIT_URL(self):
+
+        _data = self.DATA
+
+        project_id = _data.get('project', None)
+        item_id = _data.get('id', None)
+
+        return reverse(
+            settings.URLNAME_RETRIEVE_UPDATE_ITEM,
+            kwargs={
+                'project_id': project_id,
+                'item_id': item_id
+            }
+        )
 
     @classmethod
     def get_item_type(cls, data):
