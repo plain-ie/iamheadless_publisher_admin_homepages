@@ -16,7 +16,6 @@ from . import forms
 
 class HomepageContentPydanticModel(BaseItemContentsPydanticModel):
     title: str
-    slug: str
     language: str
     content: Optional[str]
     seo_keywords: Optional[str]
