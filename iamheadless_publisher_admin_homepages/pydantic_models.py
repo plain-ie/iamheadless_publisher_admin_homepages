@@ -63,6 +63,16 @@ class HomepagePydanticModel(BaseItemPydanticModel):
             }
         )
 
+    #
+
+    @classmethod
+    def viewsets(cls):
+        return [
+            f'{settings.APP_NAME}.viewsets.HomepageCreateViewSet',
+            f'{settings.APP_NAME}.viewsets.HomepageDeleteViewSet',
+            f'{settings.APP_NAME}.viewsets.HomepageRetrieveUpdateViewSet',
+        ]
+
     @classmethod
     def get_item_type(cls, data):
         return data['item_type']
